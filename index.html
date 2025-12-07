@@ -5,92 +5,94 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Plan de estudios ⋆⭒˚ 𓍝｡⋆ (2016)</title>
 
-<!-- Font (si hay conexión cargará Poppins; si no, usarán fuentes del sistema) -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* ==========================
-   PASTEL ROSA + CONEJITOS (SVG pattern)
+   ROSA PASTEL + FLORES (SVG)
    ========================== */
 
-/* Cute rabbit SVG encoded as data URI for background pattern */
 :root{
   --bg-1: #fff5f8;
   --bg-2: #ffeef4;
   --panel: #ffffff;
-  --rose-100: #ffe7ef;
-  --rose-200: #ffd1e0;
-  --rose-300: #ffb9d0;
-  --accent: #f6a6c3;
-  --primary: #d87fb0;
-  --ok: #82cfa3;
-  --danger: #f08fa0;
+
+  --rose-50: #fff6fa;
+  --rose-100: #ffe9f1;
+  --rose-200: #ffd4e2;
+  --rose-300: #ffbcd2;
+  --rose-400: #ffa2c1;
+
+  --primary: #d86fa8;
+  --accent: #f3a6c8;
+  --ok: #86d8ac;
+  --danger: #f290a8;
+
   --shadow: 0 8px 24px rgba(180,100,140,0.12);
   --radius: 16px;
+
   font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* data URI for small rabbit icon SVG (white rabbit with pink ears) */
+/* PATRÓN DE FLORES CUTE (SVG embebido como background) */
 body{
-  margin:0;
-  padding:28px;
-  background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
-  color:#3b2b3b;
+  margin:0; padding:28px;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  background-image:
-    radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><g fill='none' fill-rule='evenodd'><rect width='64' height='64' rx='12' fill='%23ffd9ea'/><g transform='translate(6 6)'><ellipse cx='26' cy='30' rx='20' ry='14' fill='%23fff1f6'/><path d='M18 8c-3-6 6-10 10-6 4 4 1 9-3 11-3 2-11 2-13-5z' fill='%23fff'/><path d='M36 6c4-5 11-4 12 0 1 4-5 7-8 7-2 0-6-1-4-7z' fill='%23ffd9ea'/><path d='M20 32c0-2 3-2 6-2s6 1 6 2c0 1-3 2-6 2s-6-1-6-2z' fill='%23ffd9ea' opacity='0.9'/><circle cx='22' cy='28' r='1.6' fill='%23f08fa0'/><circle cx='30' cy='28' r='1.6' fill='%23f08fa0'/></g></g></svg>");
-  background-size: 220px 220px, auto;
+
+  background: linear-gradient(180deg,var(--bg-1),var(--bg-2)),
+    url("data:image/svg+xml;utf8,
+      <svg width='120' height='120' viewBox='0 0 120 120'
+      xmlns='http://www.w3.org/2000/svg'>
+        <rect width='120' height='120' fill='%23ffe9f1'/>
+        <g opacity='0.45'>
+          <circle cx='30' cy='30' r='12' fill='%23ffd4e2'/>
+          <circle cx='31' cy='28' r='4' fill='%23ffbcd2'/>
+          <circle cx='29' cy='33' r='4' fill='%23ffa2c1'/>
+
+          <circle cx='90' cy='40' r='12' fill='%23ffd4e2'/>
+          <circle cx='92' cy='38' r='4' fill='%23ffbcd2'/>
+          <circle cx='87' cy='42' r='4' fill='%23ffa2c1'/>
+
+          <circle cx='60' cy='90' r='12' fill='%23ffd4e2'/>
+          <circle cx='62' cy='88' r='4' fill='%23ffbcd2'/>
+          <circle cx='57' cy='93' r='4' fill='%23ffa2c1'/>
+        </g>
+      </svg>
+    ");
+  background-size: 220px 220px;
   background-repeat: repeat;
-  background-position: 0 0;
+  color:#3b2b3b;
 }
 
-/* Page layout */
-.container {
-  max-width:1200px;
-  margin:0 auto;
-}
+.container{max-width:1200px;margin:0 auto}
 
-/* Header */
+/* HEADER */
 header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-  margin-bottom:22px;
-  flex-wrap:wrap;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;margin-bottom:24px;
 }
 h1{
-  margin:0;
-  font-size:24px;
-  line-height:1.05;
-  color:var(--primary);
-  letter-spacing:0.6px;
+  margin:0;font-size:24px;color:var(--primary);font-weight:700;
 }
 .subtitle{
-  margin:4px 0 0 0;
-  font-size:13px;
-  color:#6f4a61;
+  margin-top:4px;font-size:13px;color:#6f4a61;
 }
 
-/* Controls */
+/* CONTROLES */
 .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 button{
-  border:0;
-  border-radius:12px;
-  padding:9px 14px;
-  cursor:pointer;
-  font-size:13px;
+  border:0;border-radius:12px;
+  padding:9px 14px;cursor:pointer;font-size:13px;
   box-shadow:var(--shadow);
   transition:transform .12s ease, opacity .12s ease;
 }
-button:hover{transform:translateY(-3px);opacity:0.95}
-#export{background:linear-gradient(180deg,var(--rose-200),var(--rose-300)); color:#521e3a}
-#import{background:linear-gradient(180deg,#ffe1ef,#ffd1e6); color:#5b2a43}
-#reset{background:linear-gradient(180deg,#fff1f5,#ffdbe7); color:#8b2b45}
+button:hover{transform:translateY(-3px);opacity:.95}
+#export{background:linear-gradient(180deg,var(--rose-200),var(--rose-300));color:#542538}
+#import{background:linear-gradient(180deg,var(--rose-100),var(--rose-200));color:#52243a}
+#reset{background:linear-gradient(180deg,#fff1f7,#ffdbe7);color:#7c2a47}
 
-/* Grid of semesters */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -98,137 +100,128 @@ button:hover{transform:translateY(-3px);opacity:0.95}
 }
 @media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.grid{grid-template-columns:1fr}}
+@media(max-width:580px){.grid{grid-template-columns:1fr}}
 
-/* Semester card */
+/* SEMESTRES */
 .semester{
-  background:linear-gradient(180deg,#fff,#fff4fb);
+  background:linear-gradient(180deg,#fff,#fff4f8);
   border-radius:var(--radius);
-  padding:14px;
+  padding:16px;
   box-shadow:var(--shadow);
-  border:1px solid rgba(212,160,190,0.12);
-  min-height:140px;
+  border:1px solid rgba(255,190,220,.25);
 }
 .semester h3{
-  margin:0 0 10px 0;
-  font-size:16px;
-  color:#7b3a5a;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  margin:0 0 8px 0;font-size:16px;color:#803552;
+  display:flex;justify-content:space-between;
 }
-.semester h3 span{font-size:13px;color:#8e657f}
+.semester h3 span{
+  font-size:13px;color:#9e6b7f;
+}
 
-/* Course list and item */
+/* CURSOS */
 .course-list{display:flex;flex-direction:column;gap:10px}
 .course{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:8px;
-  padding:10px;
-  border-radius:12px;
-  background:linear-gradient(180deg,#ffffff,#fff7fb);
-  border:1px solid rgba(230,200,220,0.7);
+  display:flex;justify-content:space-between;align-items:center;
+  background:linear-gradient(180deg,#fff,#ffeff6);
+  border-radius:14px;border:1px solid rgba(255,200,220,.7);
+  padding:10px;gap:6px;
   box-shadow:0 6px 14px rgba(160,90,130,0.06);
-  cursor:pointer;
-  position:relative;
+  cursor:pointer;position:relative;
   transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
 }
-.course:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(150,80,120,0.12)}
+.course:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(150,80,120,0.12);
+}
 .course.locked{opacity:0.62;cursor:default;transform:none;box-shadow:none}
 
-/* left area */
+/* Izquierda */
 .left{display:flex;align-items:center;gap:10px}
 .code{
-  min-width:68px;
-  text-align:center;
-  font-weight:700;
   padding:8px;
+  background:var(--rose-100);
   border-radius:10px;
-  background:linear-gradient(180deg,#fff5f7,#ffe7ef);
-  color:#6b2a44;
-  font-size:12px;
+  color:#5e243d;
+  min-width:70px;text-align:center;
+  font-size:12px;font-weight:700;
 }
-.meta .title{font-weight:600;color:#4c2440}
-.meta .sub{font-size:12px;color:#8b667b;margin-top:2px}
+.meta .title{font-weight:600;color:#50243e}
+.meta .sub{font-size:12px;color:#8f687a}
 
-/* status area */
+/* Derecha */
 .status .badge{
-  padding:8px 10px;border-radius:10px;font-weight:700;font-size:12px;text-align:center;
+  padding:7px 9px;border-radius:10px;font-size:12px;font-weight:700;
 }
-.badge.approved{background:linear-gradient(180deg,#dff8ea,#c8f0dc);color:#12593b}
-.badge.locked{background:linear-gradient(180deg,#ffdce6,#ffc6da);color:#641f36}
-.badge.available{background:linear-gradient(180deg,#fff3f6,#ffe6ef);color:#6b2a44}
+.badge.approved{
+  background:linear-gradient(180deg,#dff8ea,#c8eedc);
+  color:#155a3c;
+}
+.badge.locked{
+  background:linear-gradient(180deg,#ffd6e3,#ffc3d8);
+  color:#6a253b;
+}
+.badge.available{
+  background:linear-gradient(180deg,#ffeef4,#ffdde8);
+  color:#6b2a44;
+}
 
-/* tooltip for locked items */
+/* Tooltip */
 .tooltip{
-  display:none;
-  position:absolute;
-  top:calc(100% + 8px);
-  left:12px;
-  background:#6a3752;
-  color:#fff;
-  padding:8px 10px;
-  border-radius:10px;
-  font-size:12px;
-  white-space:nowrap;
-  box-shadow:0 10px 30px rgba(60,30,80,0.25);
-  z-index:40;
+  position:absolute;top:calc(100% + 8px);left:12px;
+  background:#703351;color:#fff;
+  padding:8px 10px;border-radius:10px;
+  box-shadow:0 10px 26px rgba(60,20,80,0.25);
+  font-size:12px;white-space:nowrap;display:none;
 }
 .course.locked:hover .tooltip{display:block}
 
-/* footer legend */
+/* Footer */
 footer{
-  margin-top:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:8px;
-  color:#6f4a61;
-  font-size:13px;
+  margin-top:24px;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;flex-wrap:wrap;font-size:13px;color:#6f4a61;
 }
 .legend{display:flex;gap:8px;align-items:center}
-.legend .item{background:#fff;border-radius:10px;padding:6px 8px;border:1px solid rgba(230,200,220,0.6);display:flex;gap:8px;align-items:center}
-
-/* small-screen header */
-@media(max-width:720px){header{flex-direction:column;align-items:flex-start}}
+.legend .item{
+  background:#fff;border-radius:10px;padding:6px 8px;
+  border:1px solid rgba(255,200,220,.5);
+  display:flex;gap:6px;align-items:center;
+}
+@media(max-width:700px){header{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
+
 <body>
 <div class="container">
-  <header>
-    <div>
-      <h1>Plan de estudios ⋆⭒˚ 𓍝｡⋆ (2016)</h1>
-      <div class="subtitle">Malla curricular interactiva — Derecho. Marca materias como aprobadas; las que dependan de otras quedarán bloqueadas hasta cumplir prerrequisitos.</div>
+<header>
+  <div>
+    <h1>Plan de estudios ⋆⭒˚ 𓍝｡⋆ (2016)</h1>
+    <div class="subtitle">
+      Malla curricular interactiva — Derecho. Marca las materias aprobadas; las que dependan de otras se bloquearán hasta cumplir los prerrequisitos.
     </div>
-    <div class="controls" role="region" aria-label="Controles de la malla">
-      <button id="export" title="Exportar progreso en JSON">Exportar progreso</button>
-      <button id="import" title="Importar progreso desde JSON" id="import">Importar progreso</button>
-      <button id="reset" title="Borrar todo el progreso">Borrar progreso</button>
-    </div>
-  </header>
+  </div>
+  <div class="controls">
+    <button id="export">Exportar progreso</button>
+    <button id="import">Importar progreso</button>
+    <button id="reset">Borrar progreso</button>
+  </div>
+</header>
 
-  <main>
-    <div id="malla" class="grid" aria-live="polite"></div>
-  </main>
+<main><div id="malla" class="grid"></div></main>
 
-  <footer>
-    <div class="legend" aria-hidden="true">
-      <div class="item"><div style="width:12px;height:12px;background:linear-gradient(180deg,#dff8ea,#c8f0dc);border-radius:4px"></div>Aprobada</div>
-      <div class="item"><div style="width:12px;height:12px;background:linear-gradient(180deg,#ffdce6,#ffc6da);border-radius:4px"></div>Bloqueada</div>
-      <div class="item"><div style="width:12px;height:12px;background:linear-gradient(180deg,#fff3f6,#ffe6ef);border-radius:4px"></div>Disponible</div>
-    </div>
-    <div>Fuente: Plan de estudios Derecho 2016 (revisión 2019)</div>
-  </footer>
+<footer>
+  <div class="legend">
+    <div class="item"><div style="width:12px;height:12px;background:linear-gradient(180deg,#dff8ea,#c8eedc);border-radius:4px"></div>Aprobada</div>
+    <div class="item"><div style="width:12px;height:12px;background:linear-gradient(180deg,#ffd6e3,#ffc3d8);border-radius:4px"></div>Bloqueada</div>
+    <div class="item"><div style="width:12px;height:12px;background:linear-gradient(180deg,#ffeef4,#ffdde8);border-radius:4px"></div>Disponible</div>
+  </div>
+  <div>Fuente: Plan de estudios Derecho 2016 (revisión 2019)</div>
+</footer>
 </div>
 
 <script>
 /* ==========================
    MALLA COMPLETA (12 semestres)
-   Igual a la estructura original solicitada por el usuario.
-   Tokens especiales (ej. __128_CREDITS__) se tratan como requisitos no verificados automáticamente.
    ========================== */
 
 const MALLA = [
@@ -287,7 +280,7 @@ const MALLA = [
     {code:"DE16-0642", name:"Derechos Reales", prereq:["DE16-0427","DE16-0531"]},
     {code:"DE16-0643", name:"Suficiencia de Mitad de Carrera", prereq:["DE16-0536"]},
     {code:"DE16-0644", name:"Teología II", prereq:["DE16-0430"]},
-    {code:"DE16-0645", name:"Seminario Penal (Penal Económico y Delitos contra la AP)", prereq:["DE16-0534"]},
+    {code:"DE16-0645", name:"Seminario Penal (Penal Económico y AP)", prereq:["DE16-0534"]},
     {code:"DE16-0646", name:"Seminario Introducción al Derecho Comparado", prereq:["DE16-0536"]},
     {code:"DE16-0647", name:"Historia de la Filosofía Política (EH)", prereq:["DE16-0537","DE16-0424"]}
   ]},
@@ -299,29 +292,29 @@ const MALLA = [
     {code:"DE16-0752", name:"Derecho Tributario I", prereq:["DE16-0639"]},
     {code:"DE16-0753", name:"Historia del Perú I", prereq:["DE16-0319"]},
     {code:"DE16-0754", name:"Derecho Municipal y Regional (EE4)", prereq:["DE16-0639"]},
-    {code:"DE16-0755", name:"Derecho de la Propiedad Intelectual (EE3)", prereq:["DE16-0642","DE16-0639"]},
+    {code:"DE16-0755", name:"Propiedad Intelectual (EE3)", prereq:["DE16-0642","DE16-0639"]},
     {code:"DE16-0756", name:"Seminario Organizaciones Internacionales (EE2)", prereq:["DE16-0640"]}
   ]},
   {sem:"VIII", courses:[
-    {code:"DE16-0857", name:"Derecho de Contratos I: Teoría General", prereq:["DE16-0749"]},
+    {code:"DE16-0857", name:"Contratos I: Teoría General", prereq:["DE16-0749"]},
     {code:"DE16-0858", name:"Derecho Laboral I", prereq:["DE16-0640","DE16-0749"]},
     {code:"DE16-0859", name:"Derecho Mercantil I", prereq:["DE16-0749"]},
-    {code:"DE16-0860", name:"Derecho Procesal Penal", prereq:["DE16-0638","DE16-0534"]},
-    {code:"DE16-0861", name:"Derecho Tributario II: Impuesto a la Renta", prereq:["DE16-0752","DE16-0748"]},
+    {code:"DE16-0860", name:"Procesal Penal", prereq:["DE16-0638","DE16-0534"]},
+    {code:"DE16-0861", name:"Tributario II: Renta", prereq:["DE16-0752","DE16-0748"]},
     {code:"DE16-0862", name:"Historia del Perú II", prereq:["DE16-0753"]},
     {code:"DE16-0863", name:"Derecho y Biotecnología (EE2)", prereq:["DE16-0640","DE16-0860"]},
-    {code:"DE16-0864", name:"Seminario Criminalística, Ciencias Forenses y Criminología (EE1)", prereq:[]},
+    {code:"DE16-0864", name:"Criminalística/Forenses (EE1)", prereq:[]},
     {code:"DE16-0865", name:"Derecho de la Integración (EE2)", prereq:["DE16-0640"]}
   ]},
   {sem:"IX", courses:[
-    {code:"DE16-0966", name:"Derecho de Contratos II: Contratos Típicos", prereq:["DE16-0857"]},
+    {code:"DE16-0966", name:"Contratos II: Contratos Típicos", prereq:["DE16-0857"]},
     {code:"DE16-0967", name:"Derecho Laboral II", prereq:["DE16-0858"]},
-    {code:"DE16-0968", name:"Derecho Mercantil II: Sociedades", prereq:["DE16-0859","DE16-0748"]},
-    {code:"DE16-0969", name:"Derecho Tributario III: Imposición al Consumo y Tributación Municipal", prereq:["DE16-0861"]},
+    {code:"DE16-0968", name:"Mercantil II: Sociedades", prereq:["DE16-0859","DE16-0748"]},
+    {code:"DE16-0969", name:"Tributario III: Consumo y Mun.", prereq:["DE16-0861"]},
     {code:"DE16-0970", name:"Enseñanza Social de la Iglesia", prereq:["DE16-0862","DE16-0537"]},
-    {code:"DE16-0971", name:"Taller de Negociación, Mediación y Conciliación", prereq:["DE16-0857","DE16-0428"]},
-    {code:"DE16-0972", name:"Derecho Procesal Laboral (EE1)", prereq:["DE16-0858","DE16-0638"]},
-    {code:"DE16-0973", name:"Seminario Derecho y Nuevas Tecnologías (EE3)", prereq:["DE16-0859","DE16-0857"]},
+    {code:"DE16-0971", name:"Taller de Negociación", prereq:["DE16-0857","DE16-0428"]},
+    {code:"DE16-0972", name:"Procesal Laboral (EE1)", prereq:["DE16-0858","DE16-0638"]},
+    {code:"DE16-0973", name:"Derecho y Nuevas Tecnologías (EE3)", prereq:["DE16-0859","DE16-0857"]},
     {code:"DE16-0974", name:"Taller de Litigación Oral (EE1)", prereq:["DE16-0860","DE16-0858","DE16-0638"]}
   ]},
   {sem:"X", courses:[
@@ -330,68 +323,47 @@ const MALLA = [
     {code:"DE16-1077", name:"Ética Profesional", prereq:["DE16-0537"]},
     {code:"DE16-1078", name:"Filosofía del Derecho", prereq:["DE16-0751","DE16-0537"]},
     {code:"DE16-1079", name:"Responsabilidad Civil y Seguros", prereq:["DE16-0857"]},
-    {code:"DE16-1080", name:"Seminario de Investigación Jurídica I", prereq:["DE16-0643","__190_CREDITS__"]},
-    {code:"DE16-1081", name:"Seminario Derecho del Consumidor y Protección del Crédito (EE1 - EE3)", prereq:["DE16-0639","DE16-0968"]},
-    {code:"DE16-1082", name:"Derecho Aduanero y Comercio Internacional (EE2 - EE3)", prereq:["DE16-0857","DE16-0969"]},
-    {code:"DE16-1083", name:"Seminario de Contratación Estatal y APP (EE4)", prereq:["DE16-0857","DE16-0539"]}
+    {code:"DE16-1080", name:"Seminario Inv. Jurídica I", prereq:["DE16-0643","__190_CREDITS__"]},
+    {code:"DE16-1081", name:"Consumidor y Crédito (EE1-EE3)", prereq:["DE16-0639","DE16-0968"]},
+    {code:"DE16-1082", name:"Aduanero y Comercio Int. (EE2-EE3)", prereq:["DE16-0857","DE16-0969"]},
+    {code:"DE16-1083", name:"Contratación Estatal y APP (EE4)", prereq:["DE16-0857"]}
   ]},
   {sem:"XI", courses:[
     {code:"DE16-1184", name:"Contratos Modernos", prereq:["DE16-1079","DE16-0968"]},
-    {code:"DE16-1185", name:"Derecho de Sucesiones", prereq:["DE16-1076"]},
+    {code:"DE16-1185", name:"Sucesiones", prereq:["DE16-1076"]},
     {code:"DE16-1186", name:"Derechos Humanos", prereq:["DE16-1078","DE16-0970"]},
-    {code:"DE16-1187", name:"Elementos de Derecho Canónico y Eclesiástico del Estado", prereq:["DE16-1078","DE16-1076"]},
-    {code:"DE16-1188", name:"Financiamiento y garantías", prereq:["DE16-0748","DE16-0639","DE16-1079","DE16-0968"]},
-    {code:"DE16-1189", name:"Seminario de Investigación Jurídica II", prereq:["DE16-1180","DE16-1080"]},
+    {code:"DE16-1187", name:"Derecho Canónico/Eclesiástico", prereq:["DE16-1078","DE16-1076"]},
+    {code:"DE16-1188", name:"Financiamiento y Garantías", prereq:["DE16-0748","DE16-0639","DE16-1079","DE16-0968"]},
+    {code:"DE16-1189", name:"Seminario Inv. Jurídica II", prereq:["DE16-1080"]},
     {code:"DE16-1190", name:"Derecho Bancario (EE3)", prereq:["DE16-1079","DE16-0968"]},
     {code:"DE16-1191", name:"Derecho Minero (EE4)", prereq:["DE16-0968","DE16-0639"]},
-    {code:"DE16-1192", name:"Derecho de la Competencia y Regulación (EE4)", prereq:["DE16-0639","DE16-0427","DE16-0968"]}
+    {code:"DE16-1192", name:"Competencia y Regulación (EE4)", prereq:["DE16-0639","DE16-0427","DE16-0968"]}
   ]},
   {sem:"XII", courses:[
     {code:"DE16-1293", name:"Derecho Internacional Privado", prereq:["DE16-1185"]},
-    {code:"DE16-1294", name:"Derecho Notarial y Registral", prereq:["DE16-0966","DE16-0968","DE16-1185"]},
+    {code:"DE16-1294", name:"Notarial y Registral", prereq:["DE16-0966","DE16-0968","DE16-1185"]},
     {code:"DE16-1295", name:"Inglés Técnico Jurídico", prereq:[]},
-    {code:"DE16-1296", name:"Práctica Empresarial: Mercantil/Trib/Lab/Gestión", prereq:["DE16-1188","DE16-1184","DE16-1077","DE16-0969","DE16-0967"]},
+    {code:"DE16-1296", name:"Práctica Empresarial", prereq:["DE16-1188","DE16-1184","DE16-1077","DE16-0969","DE16-0967"]},
     {code:"DE16-1297", name:"Práctica Forense Civil y Penal", prereq:["DE16-0860","DE16-0968","DE16-1188","DE16-1077"]},
-    {code:"DE16-1298", name:"Práctica Forense en Derecho Constitucional y Administrativo", prereq:["DE16-0639","DE16-1187","DE16-1186","DE16-1077"]},
-    {code:"DE16-12101", name:"Arbitraje Comercial Int. y de Inversiones (EE1 - EE2)", prereq:["DE16-1188","DE16-1075"]},
+    {code:"DE16-1298", name:"Práctica Forense Const. y Adm.", prereq:["DE16-0639","DE16-1187","DE16-1186","DE16-1077"]},
+    {code:"DE16-12101", name:"Arbitraje Comercial Int. (EE1-EE2)", prereq:["DE16-1188","DE16-1075"]},
     {code:"DE16-1299", name:"Derecho de la Energía (EE4)", prereq:["DE16-1192"]},
-    {code:"DE16-12100", name:"Dirección y Liderazgo Estratégico (EE3 - EE4)", prereq:["DE16-0748","DE16-1077","DE16-0106"]}
+    {code:"DE16-12100", name:"Dirección y Liderazgo Estratégico (EE3-EE4)", prereq:["DE16-0748","DE16-1077","DE16-0106"]}
   ]}
 ];
 
-/* STORAGE KEY */
-const STORAGE_KEY = "malla_derecho_plan2016_pastel_conejos_v2";
+/* STORAGE */
+const STORAGE_KEY = "malla_derecho_flores_pastel_v1";
 
-/* load / save */
-function loadSaved(){
-  try{
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if(!raw) return {};
-    return JSON.parse(raw);
-  }catch(e){
-    console.warn("Error leyendo progreso:", e);
-    return {};
-  }
-}
-function saveSaved(obj){
-  try{
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
-  }catch(e){
-    console.warn("Error guardando progreso:", e);
-  }
-}
+function loadSaved(){try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||"{}");}catch{return{}}}
+function saveSaved(o){localStorage.setItem(STORAGE_KEY,JSON.stringify(o))}
 
-/* isUnlocked: require all prereq codes to be in saved
-   ignore tokens starting with "__" (credit requirements)
-*/
-function isUnlocked(code, saved){
+function isUnlocked(code,saved){
   for(const sem of MALLA){
-    const course = sem.courses.find(c => c.code === code);
-    if(course){
-      const prereq = course.prereq || [];
-      for(const p of prereq){
-        if(typeof p !== "string") continue;
-        if(p.startsWith("__")) continue; // special token: treat as unlocked by default
+    const c=sem.courses.find(x=>x.code===code);
+    if(c){
+      for(const p of c.prereq){
+        if(p.startsWith("__")) continue;
         if(!saved[p]) return false;
       }
       return true;
@@ -400,159 +372,105 @@ function isUnlocked(code, saved){
   return true;
 }
 
-/* render function */
+/* Render */
 function render(){
-  const container = document.getElementById("malla");
-  container.innerHTML = "";
-  const saved = loadSaved();
+  const m=document.getElementById("malla");
+  m.innerHTML="";
+  const saved=loadSaved();
 
   for(const sem of MALLA){
-    const section = document.createElement("section");
-    section.className = "semester";
-
-    const h = document.createElement("h3");
-    h.innerHTML = `Semestre ${sem.sem} <span>(${sem.courses.length} materias)</span>`;
-    section.appendChild(h);
-
-    const list = document.createElement("div");
-    list.className = "course-list";
+    const box=document.createElement("div");
+    box.className="semester";
+    box.innerHTML=`<h3>Semestre ${sem.sem}<span>${sem.courses.length} cursos</span></h3>`;
+    const list=document.createElement("div");
+    list.className="course-list";
 
     for(const course of sem.courses){
-      const unlocked = isUnlocked(course.code, saved);
-      const approved = !!saved[course.code];
+      const unlocked=isUnlocked(course.code,saved);
+      const approved=!!saved[course.code];
 
-      const item = document.createElement("div");
-      item.className = "course" + (unlocked ? "" : " locked");
-      item.setAttribute("data-code", course.code);
-      item.setAttribute("role","button");
-      item.setAttribute("tabindex", unlocked ? 0 : -1);
+      const item=document.createElement("div");
+      item.className=`course${unlocked?"":" locked"}`;
+      item.dataset.code=course.code;
+      item.tabIndex=unlocked?0:-1;
 
-      // left block
-      const left = document.createElement("div");
-      left.className = "left";
-      const codeEl = document.createElement("div");
-      codeEl.className = "code";
-      codeEl.textContent = course.code.replace("DE16-","D-");
-      const meta = document.createElement("div");
-      meta.className = "meta";
-      const title = document.createElement("div");
-      title.className = "title";
-      title.textContent = course.name;
-      const sub = document.createElement("div");
-      sub.className = "sub";
-      sub.textContent = (course.prereq && course.prereq.length) ? "Prereq: " + course.prereq.join(", ") : "Sin prerrequisitos";
-      meta.appendChild(title);
-      meta.appendChild(sub);
-      left.appendChild(codeEl);
-      left.appendChild(meta);
+      item.innerHTML=`
+        <div class="left">
+          <div class="code">${course.code.replace("DE16-","D-")}</div>
+          <div class="meta">
+            <div class="title">${course.name}</div>
+            <div class="sub">${course.prereq.length?"Prereq: "+course.prereq.join(", "):"Sin prerrequisitos"}</div>
+          </div>
+        </div>
+        <div class="status">
+          <div class="badge ${approved?"approved":(unlocked?"available":"locked")}">
+            ${approved?"Aprobada":(unlocked?"Disponible":"Bloqueada")}
+          </div>
+        </div>
+      `;
 
-      // right block
-      const right = document.createElement("div");
-      right.className = "status";
-      const badge = document.createElement("div");
-      badge.className = "badge " + (approved ? "approved" : (unlocked ? "available" : "locked"));
-      badge.textContent = approved ? "Aprobada" : (unlocked ? "Disponible" : "Bloqueada");
-      right.appendChild(badge);
-
-      item.appendChild(left);
-      item.appendChild(right);
-
-      // tooltip for locked
       if(!unlocked){
-        const missing = course.prereq.filter(p => !p.startsWith("__") && !saved[p]);
-        const tooltip = document.createElement("div");
-        tooltip.className = "tooltip";
-        tooltip.innerHTML = `<strong>Faltan:</strong> ${missing.join(", ")}`;
-        item.appendChild(tooltip);
+        const missing=course.prereq.filter(p=>!p.startsWith("__") && !saved[p]);
+        const t=document.createElement("div");
+        t.className="tooltip";
+        t.innerHTML=`<strong>Faltan:</strong> ${missing.join(", ")}`;
+        item.appendChild(t);
       }
 
-      // click
-      item.addEventListener("click", () => {
-        const s = loadSaved();
-        if(!isUnlocked(course.code, s)){
-          // visual feedback
-          item.animate([{transform:"translateY(0)"},{transform:"translateY(-6px)"},{transform:"translateY(0)"}],{duration:180});
+      item.addEventListener("click",()=>{
+        const s=loadSaved();
+        if(!isUnlocked(course.code,s)){
+          item.animate([{transform:"translateY(0)"},{transform:"translateY(-5px)"},{transform:"translateY(0)"}],{duration:180});
           return;
         }
         if(s[course.code]) delete s[course.code];
-        else s[course.code] = {when: Date.now()};
+        else s[course.code]=true;
         saveSaved(s);
         render();
-      });
-
-      // keyboard
-      item.addEventListener("keydown", (e) => {
-        if(e.key === "Enter" && isUnlocked(course.code, loadSaved())){
-          item.click();
-        }
       });
 
       list.appendChild(item);
     }
 
-    section.appendChild(list);
-    container.appendChild(section);
+    box.appendChild(list);
+    m.appendChild(box);
   }
 }
 
-/* buttons: reset / export / import */
-document.getElementById("reset").addEventListener("click", () => {
-  if(!confirm("Borrarás TODO el progreso guardado. ¿Continuar?")) return;
-  localStorage.removeItem(STORAGE_KEY);
-  render();
-});
-
-document.getElementById("export").addEventListener("click", () => {
-  const s = loadSaved();
-  const dataStr = JSON.stringify(s, null, 2);
-  const blob = new Blob([dataStr], {type:"application/json"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "progreso_malla_derecho_plan2016.json";
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-});
-
-document.getElementById("import").addEventListener("click", () => {
-  const input = document.createElement("input");
-  input.type = "file";
-  input.accept = "application/json";
-  input.onchange = () => {
-    if(!input.files || input.files.length === 0) return;
-    const f = input.files[0];
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      try{
-        const data = JSON.parse(ev.target.result);
-        if(typeof data !== "object") throw new Error("Formato inválido");
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-        render();
-        alert("Progreso importado correctamente.");
-      } catch(e){
-        alert("Archivo inválido: " + e.message);
-      }
-    };
-    reader.readAsText(f);
-  };
-  input.click();
-});
-
-/* initialize and focus */
-render();
-window.addEventListener("load", () => {
-  const saved = loadSaved();
-  for(const sem of MALLA){
-    for(const c of sem.courses){
-      if(isUnlocked(c.code, saved)){
-        const el = document.querySelector(`[data-code="${c.code}"]`);
-        if(el){ el.focus(); return; }
-      }
-    }
+/* Botones */
+document.getElementById("reset").onclick=()=>{
+  if(confirm("¿Borrar todo el progreso?")){
+    localStorage.removeItem(STORAGE_KEY);
+    render();
   }
-});
+};
+document.getElementById("export").onclick=()=>{
+  const blob=new Blob([JSON.stringify(loadSaved(),null,2)],{type:"application/json"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="progreso_malla_flores.json";
+  a.click();
+};
+document.getElementById("import").onclick=()=>{
+  const i=document.createElement("input");
+  i.type="file";i.accept="application/json";
+  i.onchange=()=>{
+    const f=i.files[0];
+    const r=new FileReader();
+    r.onload=e=>{
+      try{
+        const j=JSON.parse(e.target.result);
+        saveSaved(j);render();
+        alert("Importado correctamente.");
+      }catch{alert("Archivo inválido.");}
+    };
+    r.readAsText(f);
+  };
+  i.click();
+};
+
+render();
 </script>
+
 </body>
 </html>
