@@ -5,203 +5,230 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Plan de estudios ⋆⭒˚ 𓍝｡⋆ (2016)</title>
 
+<!-- Font (si hay conexión cargará Poppins; si no, usarán fuentes del sistema) -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 /* ==========================
-   PALETA PASTEL + ESTÉTICA
+   PASTEL ROSA + CONEJITOS (SVG pattern)
    ========================== */
-:root {
-  --bg-1: #fff7ff;
-  --bg-2: #f2f7ff;
+
+/* Cute rabbit SVG encoded as data URI for background pattern */
+:root{
+  --bg-1: #fff5f8;
+  --bg-2: #ffeef4;
   --panel: #ffffff;
-  --pastel-pink: #f7c9d4;
-  --pastel-blue: #c8d9ff;
-  --pastel-lilac: #d8c7ff;
-  --pastel-mint:  #c8f2e0;
-
-  --primary: #a38ad6;
-  --accent: #8bbde9;
-  --ok: #7acfa5;
-  --danger: #e88b9c;
-
-  --shadow: 0 6px 18px rgba(140, 120, 180, 0.12);
-  --radius: 18px;
-
-  font-family: "Poppins", "Inter", "Segoe UI", Arial, sans-serif;
+  --rose-100: #ffe7ef;
+  --rose-200: #ffd1e0;
+  --rose-300: #ffb9d0;
+  --accent: #f6a6c3;
+  --primary: #d87fb0;
+  --ok: #82cfa3;
+  --danger: #f08fa0;
+  --shadow: 0 8px 24px rgba(180,100,140,0.12);
+  --radius: 16px;
+  font-family: "Poppins", "Segoe UI", Roboto, Arial, sans-serif;
 }
-*{box-sizing:border-box}
-body {
-  margin: 0;
-  padding: 32px;
-  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
-  color: #333;
+
+/* data URI for small rabbit icon SVG (white rabbit with pink ears) */
+body{
+  margin:0;
+  padding:28px;
+  background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color:#3b2b3b;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><g fill='none' fill-rule='evenodd'><rect width='64' height='64' rx='12' fill='%23ffd9ea'/><g transform='translate(6 6)'><ellipse cx='26' cy='30' rx='20' ry='14' fill='%23fff1f6'/><path d='M18 8c-3-6 6-10 10-6 4 4 1 9-3 11-3 2-11 2-13-5z' fill='%23fff'/><path d='M36 6c4-5 11-4 12 0 1 4-5 7-8 7-2 0-6-1-4-7z' fill='%23ffd9ea'/><path d='M20 32c0-2 3-2 6-2s6 1 6 2c0 1-3 2-6 2s-6-1-6-2z' fill='%23ffd9ea' opacity='0.9'/><circle cx='22' cy='28' r='1.6' fill='%23f08fa0'/><circle cx='30' cy='28' r='1.6' fill='%23f08fa0'/></g></g></svg>");
+  background-size: 220px 220px, auto;
+  background-repeat: repeat;
+  background-position: 0 0;
 }
 
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 28px;
-}
-h1 {
-  margin: 0;
-  font-size: 26px;
-  font-weight: 700;
-  color: #7d67b4;
-}
-p.lead {
-  margin: 6px 0 0 0;
-  font-size: 14px;
-  color: #6b6b6b;
+/* Page layout */
+.container {
+  max-width:1200px;
+  margin:0 auto;
 }
 
-/* BUTTONS */
-.controls { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-button {
-  border: none;
-  border-radius: 12px;
-  padding: 10px 14px;
-  cursor: pointer;
-  font-size: 13px;
-  transition: opacity .16s, transform .12s;
-  box-shadow: 0 6px 18px rgba(120,80,160,0.06);
-}
-button:hover { opacity:0.92; transform: translateY(-2px); }
-#export { background: var(--pastel-blue); color: #394b7c; }
-#import { background: var(--pastel-lilac); color: #4d3b77; }
-#reset { background: var(--pastel-pink); color: #7e2e3f; }
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-@media(max-width:1100px){ .grid { grid-template-columns: repeat(3,1fr); } }
-@media(max-width:800px){ .grid { grid-template-columns: repeat(2,1fr); } }
-@media(max-width:580px){ .grid { grid-template-columns: 1fr; } }
-
-/* SEMESTER CARD */
-.semester {
-  background: var(--panel);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(180,150,230,0.08);
-  min-height: 140px;
-}
-.semester h3 {
-  margin: 0 0 12px 0;
-  font-size: 18px;
-  color: #7d67b4;
-  display: flex;
-  justify-content: space-between;
-  align-items:center;
-}
-.semester h3 span { color:#999; font-size:13px; }
-
-/* COURSE ITEM */
-.course-list {
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-.course {
-  border-radius: 14px;
-  padding: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(247,242,255,0.85));
-  border: 1px solid rgba(230,220,255,0.7);
+/* Header */
+header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  box-shadow: 0 6px 14px rgba(110,80,170,0.05);
-  cursor: pointer;
+  gap:16px;
+  margin-bottom:22px;
+  flex-wrap:wrap;
+}
+h1{
+  margin:0;
+  font-size:24px;
+  line-height:1.05;
+  color:var(--primary);
+  letter-spacing:0.6px;
+}
+.subtitle{
+  margin:4px 0 0 0;
+  font-size:13px;
+  color:#6f4a61;
+}
+
+/* Controls */
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+button{
+  border:0;
+  border-radius:12px;
+  padding:9px 14px;
+  cursor:pointer;
+  font-size:13px;
+  box-shadow:var(--shadow);
+  transition:transform .12s ease, opacity .12s ease;
+}
+button:hover{transform:translateY(-3px);opacity:0.95}
+#export{background:linear-gradient(180deg,var(--rose-200),var(--rose-300)); color:#521e3a}
+#import{background:linear-gradient(180deg,#ffe1ef,#ffd1e6); color:#5b2a43}
+#reset{background:linear-gradient(180deg,#fff1f5,#ffdbe7); color:#8b2b45}
+
+/* Grid of semesters */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+
+/* Semester card */
+.semester{
+  background:linear-gradient(180deg,#fff,#fff4fb);
+  border-radius:var(--radius);
+  padding:14px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(212,160,190,0.12);
+  min-height:140px;
+}
+.semester h3{
+  margin:0 0 10px 0;
+  font-size:16px;
+  color:#7b3a5a;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.semester h3 span{font-size:13px;color:#8e657f}
+
+/* Course list and item */
+.course-list{display:flex;flex-direction:column;gap:10px}
+.course{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  padding:10px;
+  border-radius:12px;
+  background:linear-gradient(180deg,#ffffff,#fff7fb);
+  border:1px solid rgba(230,200,220,0.7);
+  box-shadow:0 6px 14px rgba(160,90,130,0.06);
+  cursor:pointer;
   position:relative;
-  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
 }
-.course:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(100,60,150,0.12); }
-.course.locked { opacity:0.65; cursor: default; transform: none; box-shadow:none; }
+.course:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(150,80,120,0.12)}
+.course.locked{opacity:0.62;cursor:default;transform:none;box-shadow:none}
 
-/* LEFT SIDE */
-.left { display:flex; gap:10px; align-items:center; }
-.code {
-  background: linear-gradient(180deg,var(--pastel-mint), #e6fff4);
-  color: #2a5946;
-  padding:8px; border-radius:10px;
-  font-size:12px; min-width:70px; text-align:center; font-weight:700;
+/* left area */
+.left{display:flex;align-items:center;gap:10px}
+.code{
+  min-width:68px;
+  text-align:center;
+  font-weight:700;
+  padding:8px;
+  border-radius:10px;
+  background:linear-gradient(180deg,#fff5f7,#ffe7ef);
+  color:#6b2a44;
+  font-size:12px;
 }
-.meta .title { font-size:14px; font-weight:600; color:#3d2f63; }
-.meta .sub { font-size:12px; color:#777; margin-top:2px; }
+.meta .title{font-weight:600;color:#4c2440}
+.meta .sub{font-size:12px;color:#8b667b;margin-top:2px}
 
-/* STATUS */
-.status .badge {
-  padding:8px 10px; border-radius:10px; font-size:12px; font-weight:700; color:#fff;
-  min-width:86px; text-align:center;
+/* status area */
+.status .badge{
+  padding:8px 10px;border-radius:10px;font-weight:700;font-size:12px;text-align:center;
 }
-.badge.approved { background:var(--ok); color:#0e3f2d; font-weight:700; }
-.badge.locked { background:var(--danger); color:#501a23; }
-.badge.available { background: linear-gradient(180deg,var(--pastel-blue), #eaf3ff); color:#27406b; font-weight:700; }
+.badge.approved{background:linear-gradient(180deg,#dff8ea,#c8f0dc);color:#12593b}
+.badge.locked{background:linear-gradient(180deg,#ffdce6,#ffc6da);color:#641f36}
+.badge.available{background:linear-gradient(180deg,#fff3f6,#ffe6ef);color:#6b2a44}
 
-/* TOOLTIP */
-.tooltip {
+/* tooltip for locked items */
+.tooltip{
   display:none;
   position:absolute;
-  top: calc(100% + 8px);
-  left: 14px;
-  background: #4f3d78;
-  color:#fff; padding:8px 10px; border-radius:10px; font-size:12px;
-  white-space:nowrap; box-shadow: 0 8px 22px rgba(60,40,100,0.25); z-index:40;
+  top:calc(100% + 8px);
+  left:12px;
+  background:#6a3752;
+  color:#fff;
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:12px;
+  white-space:nowrap;
+  box-shadow:0 10px 30px rgba(60,30,80,0.25);
+  z-index:40;
 }
-.course.locked:hover .tooltip { display:block; transform:translateY(0); }
+.course.locked:hover .tooltip{display:block}
 
-/* FOOTER */
-footer {
-  margin-top:28px; font-size:13px; color:#777; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+/* footer legend */
+footer{
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  color:#6f4a61;
+  font-size:13px;
 }
-.legend { display:flex; gap:10px; align-items:center; }
-.legend .item { background:#fff; border-radius:10px; padding:6px 10px; display:flex; gap:8px; align-items:center; border:1px solid rgba(230,220,255,0.6); }
+.legend{display:flex;gap:8px;align-items:center}
+.legend .item{background:#fff;border-radius:10px;padding:6px 8px;border:1px solid rgba(230,200,220,0.6);display:flex;gap:8px;align-items:center}
 
-/* small screens: header layout */
-@media(max-width:720px){
-  header{flex-direction:column; align-items:flex-start;}
-}
+/* small-screen header */
+@media(max-width:720px){header{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
-<header>
-  <div>
-    <h1>Malla curricular — Derecho (Pastel Edition — Completa)</h1>
-    <p class="lead">Haz clic en una materia para marcarla como aprobada. Las materias con prerrequisitos aparecen bloqueadas hasta aprobarlos. Progreso guardado en tu navegador.</p>
-  </div>
-  <div class="controls">
-    <button id="export">Exportar progreso (JSON)</button>
-    <button id="import">Importar progreso</button>
-    <button id="reset">Borrar progreso</button>
-  </div>
-</header>
+<div class="container">
+  <header>
+    <div>
+      <h1>Plan de estudios ⋆⭒˚ 𓍝｡⋆ (2016)</h1>
+      <div class="subtitle">Malla curricular interactiva — Derecho. Marca materias como aprobadas; las que dependan de otras quedarán bloqueadas hasta cumplir prerrequisitos.</div>
+    </div>
+    <div class="controls" role="region" aria-label="Controles de la malla">
+      <button id="export" title="Exportar progreso en JSON">Exportar progreso</button>
+      <button id="import" title="Importar progreso desde JSON" id="import">Importar progreso</button>
+      <button id="reset" title="Borrar todo el progreso">Borrar progreso</button>
+    </div>
+  </header>
 
-<main>
-  <div id="malla" class="grid" aria-live="polite"></div>
-</main>
+  <main>
+    <div id="malla" class="grid" aria-live="polite"></div>
+  </main>
 
-<footer>
-  <div class="legend">
-    <div class="item"><div style="width:14px;height:14px;background:var(--ok);border-radius:4px"></div>Aprobada</div>
-    <div class="item"><div style="width:14px;height:14px;background:var(--danger);border-radius:4px"></div>Bloqueada</div>
-    <div class="item"><div style="width:14px;height:14px;background:var(--pastel-blue);border-radius:4px"></div>Disponible</div>
-  </div>
-  <div>Fuente: Plan de estudios Derecho 2016 (revisión 2019)</div>
-</footer>
+  <footer>
+    <div class="legend" aria-hidden="true">
+      <div class="item"><div style="width:12px;height:12px;background:linear-gradient(180deg,#dff8ea,#c8f0dc);border-radius:4px"></div>Aprobada</div>
+      <div class="item"><div style="width:12px;height:12px;background:linear-gradient(180deg,#ffdce6,#ffc6da);border-radius:4px"></div>Bloqueada</div>
+      <div class="item"><div style="width:12px;height:12px;background:linear-gradient(180deg,#fff3f6,#ffe6ef);border-radius:4px"></div>Disponible</div>
+    </div>
+    <div>Fuente: Plan de estudios Derecho 2016 (revisión 2019)</div>
+  </footer>
+</div>
 
 <script>
 /* ==========================
    MALLA COMPLETA (12 semestres)
-   Datos extraídos del plan de estudios proporcionado por el usuario.
-   Cada objeto: {code, name, prereq:[codes...]}
-   Nota: Tokens especiales como __128_CREDITS__ se tratan como requisitos no verificados automáticamente.
+   Igual a la estructura original solicitada por el usuario.
+   Tokens especiales (ej. __128_CREDITS__) se tratan como requisitos no verificados automáticamente.
    ========================== */
 
 const MALLA = [
@@ -332,48 +359,39 @@ const MALLA = [
   ]}
 ];
 
-/* ==========================
-   STORAGE KEY
-   ========================== */
-const STORAGE_KEY = "malla_derecho_plan2016_pastel_v1";
+/* STORAGE KEY */
+const STORAGE_KEY = "malla_derecho_plan2016_pastel_conejos_v2";
 
-/* ==========================
-   HELPERS: load / save
-   ========================== */
+/* load / save */
 function loadSaved(){
-  try {
+  try{
     const raw = localStorage.getItem(STORAGE_KEY);
     if(!raw) return {};
     return JSON.parse(raw);
-  } catch(e){
-    console.warn("No se pudo leer progreso:", e);
+  }catch(e){
+    console.warn("Error leyendo progreso:", e);
     return {};
   }
 }
 function saveSaved(obj){
-  try {
+  try{
     localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
-  } catch(e){
-    console.warn("No se pudo guardar progreso:", e);
+  }catch(e){
+    console.warn("Error guardando progreso:", e);
   }
 }
 
-/* ==========================
-   isUnlocked: all prereqs approved
-   - ignores special tokens that start with __
-   ========================== */
+/* isUnlocked: require all prereq codes to be in saved
+   ignore tokens starting with "__" (credit requirements)
+*/
 function isUnlocked(code, saved){
-  // find course
   for(const sem of MALLA){
     const course = sem.courses.find(c => c.code === code);
     if(course){
       const prereq = course.prereq || [];
       for(const p of prereq){
         if(typeof p !== "string") continue;
-        if(p.startsWith("__")) {
-          // special token (credits): treat as unlocked by default
-          continue;
-        }
+        if(p.startsWith("__")) continue; // special token: treat as unlocked by default
         if(!saved[p]) return false;
       }
       return true;
@@ -382,9 +400,7 @@ function isUnlocked(code, saved){
   return true;
 }
 
-/* ==========================
-   RENDER
-   ========================== */
+/* render function */
 function render(){
   const container = document.getElementById("malla");
   container.innerHTML = "";
@@ -408,10 +424,10 @@ function render(){
       const item = document.createElement("div");
       item.className = "course" + (unlocked ? "" : " locked");
       item.setAttribute("data-code", course.code);
-      item.setAttribute("role", "button");
+      item.setAttribute("role","button");
       item.setAttribute("tabindex", unlocked ? 0 : -1);
 
-      // left
+      // left block
       const left = document.createElement("div");
       left.className = "left";
       const codeEl = document.createElement("div");
@@ -430,7 +446,7 @@ function render(){
       left.appendChild(codeEl);
       left.appendChild(meta);
 
-      // right
+      // right block
       const right = document.createElement("div");
       right.className = "status";
       const badge = document.createElement("div");
@@ -441,7 +457,7 @@ function render(){
       item.appendChild(left);
       item.appendChild(right);
 
-      // tooltip for locked showing missing prereqs
+      // tooltip for locked
       if(!unlocked){
         const missing = course.prereq.filter(p => !p.startsWith("__") && !saved[p]);
         const tooltip = document.createElement("div");
@@ -450,25 +466,21 @@ function render(){
         item.appendChild(tooltip);
       }
 
-      // click behaviour
-      item.addEventListener("click", (ev) => {
+      // click
+      item.addEventListener("click", () => {
         const s = loadSaved();
-        if(!isUnlocked(course.code, s)) {
-          // small feedback
+        if(!isUnlocked(course.code, s)){
+          // visual feedback
           item.animate([{transform:"translateY(0)"},{transform:"translateY(-6px)"},{transform:"translateY(0)"}],{duration:180});
           return;
         }
-        // toggle approved
-        if(s[course.code]) {
-          delete s[course.code];
-        } else {
-          s[course.code] = {when: Date.now()};
-        }
+        if(s[course.code]) delete s[course.code];
+        else s[course.code] = {when: Date.now()};
         saveSaved(s);
         render();
       });
 
-      // keyboard support
+      // keyboard
       item.addEventListener("keydown", (e) => {
         if(e.key === "Enter" && isUnlocked(course.code, loadSaved())){
           item.click();
@@ -483,9 +495,7 @@ function render(){
   }
 }
 
-/* ==========================
-   BUTTONS: reset / export / import
-   ========================== */
+/* buttons: reset / export / import */
 document.getElementById("reset").addEventListener("click", () => {
   if(!confirm("Borrarás TODO el progreso guardado. ¿Continuar?")) return;
   localStorage.removeItem(STORAGE_KEY);
@@ -530,12 +540,8 @@ document.getElementById("import").addEventListener("click", () => {
   input.click();
 });
 
-/* ==========================
-   INIT
-   ========================== */
+/* initialize and focus */
 render();
-
-/* Accessibility: focus first available course */
 window.addEventListener("load", () => {
   const saved = loadSaved();
   for(const sem of MALLA){
